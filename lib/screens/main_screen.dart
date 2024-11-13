@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:foodappclone/provider/bottom_navigation_index_provider.dart';
 import 'package:foodappclone/screens/cart_screen.dart';
 import 'package:foodappclone/screens/homepage_screen.dart';
 import 'package:foodappclone/screens/profile_screen.dart';
 import 'package:foodappclone/screens/search_screen.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:provider/provider.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,8 +16,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 0;
-
   final List<Widget> _pages = [
     const HomePage(),
     const SearchScreen(),
@@ -23,16 +23,11 @@ class _MainScreenState extends State<MainScreen> {
     const ProfileScreen(),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    final indexProvider = Provider.of<BottomNavigationIndexProvider>(context);
     return Scaffold(
-      body: _pages[_selectedIndex],
+      body: _pages[indexProvider.selectedIndex],
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
         child: Row(
@@ -52,10 +47,11 @@ class _MainScreenState extends State<MainScreen> {
 
   Widget _buildNavItem(
       IconData icon, IconData activeIcon, String label, int index) {
-    final isSelected = _selectedIndex == index;
+    final indexProvider = Provider.of<BottomNavigationIndexProvider>(context);
+    final isSelected = indexProvider.selectedIndex == index;
 
     return GestureDetector(
-      onTap: () => _onItemTapped(index),
+      onTap: () => indexProvider.setIndex(index),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

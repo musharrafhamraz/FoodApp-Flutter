@@ -38,6 +38,7 @@ dependencies:
   gap: ^3.0.1
   iconsax: ^0.0.8
   provider: ^6.1.2
+  device_preview: ^1.2.0
 
 dev_dependencies:
   flutter_test:
