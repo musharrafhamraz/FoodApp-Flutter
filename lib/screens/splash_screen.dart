@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodappclone/screens/homepage_screen.dart';
+import 'package:foodappclone/screens/main_screen.dart';
 import 'package:gap/gap.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -39,7 +39,7 @@ class SplashScreen extends StatelessWidget {
             const Gap(40),
             GestureDetector(
               onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePage())),
+                  MaterialPageRoute(builder: (context) => const MainScreen())),
               child: Container(
                 height: height * 0.08,
                 width: width * 0.7,
