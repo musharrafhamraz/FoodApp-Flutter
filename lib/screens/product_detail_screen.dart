@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:foodappclone/widgets/button.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -22,13 +23,16 @@ class ProductDetailScreen extends StatelessWidget {
         ], begin: Alignment.topCenter, end: Alignment.bottomLeft)),
         child: Column(
           children: [
-            const Align(
+            Align(
               alignment: Alignment.topLeft,
               child: Padding(
                 padding: EdgeInsets.all(24.0),
-                child: Icon(
-                  Icons.arrow_back_ios_new,
-                  color: Colors.white,
+                child: GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Icon(
+                    Icons.arrow_back_ios_new,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
@@ -89,6 +93,24 @@ class ProductDetailScreen extends StatelessWidget {
                         fontWeight: FontWeight.w500),
                   ),
                   Gap(10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      AddOnsItem(),
+                      AddOnsItem(),
+                      AddOnsItem(),
+                    ],
+                  ),
+                  Gap(20),
+                  // Button
+                  Align(
+                    alignment: Alignment.center,
+                    child: MainButton(
+                      text: 'Add To Cart',
+                      bgcolor: Color.fromRGBO(70, 43, 156, 1),
+                      textcolor: Colors.white,
+                    ),
+                  )
                 ],
               ),
             ))
@@ -96,6 +118,35 @@ class ProductDetailScreen extends StatelessWidget {
         ),
       )),
     );
+  }
+}
+
+class AddOnsItem extends StatelessWidget {
+  const AddOnsItem({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(children: [
+      Container(
+        height: 80,
+        width: 80,
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: const Image(image: AssetImage('assets/Picture8.png')),
+      ),
+      Positioned(
+        bottom: 0,
+        right: 0,
+        child: Image.asset(
+          'assets/Picture7.png',
+          height: 30,
+        ),
+      )
+    ]);
   }
 }
 

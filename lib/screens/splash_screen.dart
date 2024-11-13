@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodappclone/screens/main_screen.dart';
+import 'package:foodappclone/widgets/button.dart';
 import 'package:gap/gap.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -37,27 +38,34 @@ class SplashScreen extends StatelessWidget {
               ],
             ),
             const Gap(40),
-            GestureDetector(
-              onTap: () => Navigator.push(context,
+            // GestureDetector(
+            //   onTap: () => Navigator.push(context,
+            //       MaterialPageRoute(builder: (context) => const MainScreen())),
+            //   child: Container(
+            //     height: height * 0.08,
+            //     width: width * 0.7,
+            //     decoration: BoxDecoration(
+            //         color: Colors.white,
+            //         borderRadius: BorderRadius.circular(22.0)),
+            //     child: const Center(
+            //       child: Text(
+            //         'Get Started',
+            //         style: TextStyle(
+            //             fontSize: 27.0,
+            //             fontWeight: FontWeight.w500,
+            //             fontFamily: 'Poppins',
+            //             color: Color.fromRGBO(70, 43, 156, 1)),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            MainButton(
+              text: 'Get Started',
+              bgcolor: Colors.white,
+              textcolor: const Color.fromRGBO(70, 43, 156, 1),
+              function: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const MainScreen())),
-              child: Container(
-                height: height * 0.08,
-                width: width * 0.7,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(22.0)),
-                child: const Center(
-                  child: Text(
-                    'Get Started',
-                    style: TextStyle(
-                        fontSize: 27.0,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'Poppins',
-                        color: Color.fromRGBO(70, 43, 156, 1)),
-                  ),
-                ),
-              ),
-            )
+            ),
           ],
         ),
       ),
