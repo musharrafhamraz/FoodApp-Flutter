@@ -21,9 +21,9 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const TopBar(),
-                const Gap(24),
+                const Gap(20),
                 const SearchField(),
-                const Gap(24),
+                const Gap(20),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(

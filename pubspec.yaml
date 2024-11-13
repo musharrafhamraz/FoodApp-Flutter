@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   gap: ^3.0.1
   iconsax: ^0.0.8
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +82,7 @@ flutter:
       fonts:
         - asset: assets/fonts/Poppins-SemiBold.ttf
         - asset: assets/fonts/Poppins-Light.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
           style: normal
   #   - family: Trajan Pro
   #     fonts:
