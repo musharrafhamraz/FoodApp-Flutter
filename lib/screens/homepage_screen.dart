@@ -57,7 +57,7 @@ class HomePage extends StatelessWidget {
                   height: 200,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
-                    children: [
+                    children: const [
                       ProductComponents(),
                       ProductComponents(),
                       ProductComponents(),

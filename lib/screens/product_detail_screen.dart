@@ -27,14 +27,14 @@ class ProductDetailScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     top: 24.0,
                     right: 24.0,
                     left: 24.0,
                   ),
                   child: GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back_ios_new,
                       color: Colors.white,
                     ),

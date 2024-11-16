@@ -1,4 +1,4 @@
-import 'package:device_preview/device_preview.dart';
+// import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:foodappclone/provider/bottom_navigation_index_provider.dart';
 import 'package:foodappclone/screens/splash_screen.dart';
@@ -6,15 +6,19 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      builder: (context) => MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-              create: (_) => BottomNavigationIndexProvider()),
-          // Add other providers here if needed
-        ],
-        child: const MyApp(),
-      ),
+    // DevicePreview(
+    //   builder: (context) => MultiProvider(
+    //     providers: [
+    //       ChangeNotifierProvider(
+    //           create: (_) => BottomNavigationIndexProvider()),
+    //       // Add other providers here if needed
+    //     ],
+    //     child: const MyApp(),
+    //   ),
+    // ),
+    ChangeNotifierProvider(
+      create: (context) => BottomNavigationIndexProvider(),
+      child: const MyApp(),
     ),
   );
 }
