@@ -55,7 +55,7 @@ class ProductDetailScreen extends StatelessWidget {
                               .withOpacity(0.08), // Shadow color with opacity
                           spreadRadius: 8, // How much the shadow spreads
                           blurRadius: 12, // Softness of the shadow
-                          offset: const Offset(4, 4), // Offset for X and Y
+                          offset: const Offset(1, 4), // Offset for X and Y
                         ),
                       ]),
                   child: Transform.rotate(

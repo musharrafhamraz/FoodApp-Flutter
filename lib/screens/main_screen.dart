@@ -63,25 +63,17 @@ class _MainScreenState extends State<MainScreen> {
             size: 28,
           ),
           const Gap(8),
-          AnimatedSwitcher(
-            duration: const Duration(milliseconds: 500),
-            switchInCurve: Curves.bounceIn,
-            transitionBuilder: (child, animation) => FadeTransition(
-              opacity: animation,
-              child: child,
-            ),
-            child: isSelected
-                ? Text(
-                    label,
-                    key: ValueKey(label),
-                    style: const TextStyle(
-                        color: Color.fromRGBO(70, 43, 156, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        fontFamily: 'Poppins'),
-                  )
-                : const SizedBox.shrink(),
-          ),
+          isSelected
+              ? Text(
+                  label,
+                  key: ValueKey(label),
+                  style: const TextStyle(
+                      color: Color.fromRGBO(70, 43, 156, 1),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      fontFamily: 'Poppins'),
+                )
+              : const SizedBox.shrink(),
         ],
       ),
     );
